@@ -1,0 +1,34 @@
+How you divide the tasks in different classes is up to you, but here are some functions that you may want to implement
+
+I recommend using at least a tester and game class
+
+randomWord(){
+  grabs a random word from the list and removes/moves said word from the list
+  set said word to variable
+}
+
+makeGuess(){
+  //you may want to put this into a while loop that ends on a certain number of guesses
+  player inputs their guess
+  checks if correct
+  responds accordingly
+}
+
+you also would want to use an ArrayList or array to display the grid
+printBoard(){
+  prints 2d array
+}
+
+showGuessed(){
+  show letters already guessed
+}
+
+Things to consider:
+- How can we make this replayable
+- How do we communicate colors?
+- What happens if someone tries to enter in too short or long of a word?
+- Show the letters already guessed?
+- how to go about comparing input and target words
+- what if player tries to input numbers, etc. 
+
+YOU GOT THIS! :)
