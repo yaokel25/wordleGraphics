@@ -1,3 +1,4 @@
+//Submitted by kevin Chen... MLT
 //The code should involve a wordle class and a main method
 
 /* 
