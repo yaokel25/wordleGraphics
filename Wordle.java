@@ -8,7 +8,7 @@ public class Wordle extends Pad{
         key1 = key;
     }
     public void drawVictory(){
-        Rectangle background = new Rectangle(0,0,100,100);
+        Rectangle background = new Rectangle(0,0,130,130);
         background.setFillColor(165,227,161);
     }
     public void checkWord(String input){
