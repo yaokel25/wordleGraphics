@@ -5,6 +5,7 @@ public class Tester{
         String input = "";
         Scanner scan = new Scanner(System.in);
         Wordle w1 = new Wordle("fives");
+        
         for(int i = 0; i < 5; i++){
             System.out.println("Enter your guess: ");
             input = scan.nextLine();

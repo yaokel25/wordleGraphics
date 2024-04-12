@@ -1,10 +1,15 @@
 import doodlepad.*;
 
-public class Wordle{
+public class Wordle extends Pad{
     private String key1;
     private boolean checkString = false;
     public Wordle(String key){
+        super("Wordle", 100, 100);
         key1 = key;
+    }
+    public void drawVictory(){
+        Rectangle background = new Rectangle(0,0,100,100);
+        background.setFillColor(165,227,161);
     }
     public void checkWord(String input){
         boolean checkLetter = false;
