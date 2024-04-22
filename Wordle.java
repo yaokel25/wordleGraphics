@@ -1,5 +1,7 @@
 import doodlepad.*;
-
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
 public class Wordle extends Pad{
     private String key1;
     private boolean checkString = false;
@@ -7,6 +9,7 @@ public class Wordle extends Pad{
         super("Wordle", 1000, 1000);
         key1 = key;
     }
+    
     public void drawVictory(){
         Rectangle backgroundV = new Rectangle(0,0,1000,1000);
         backgroundV.setFillColor(165,227,161);
