@@ -33,8 +33,10 @@ public class Tester{
     }
     public static void main(String args[]){
         String input = "";
+        String inputWord = readFile();
+        //System.out.print(inputWord);
         Scanner scan = new Scanner(System.in);
-        Wordle w1 = new Wordle("fives");
+        Wordle w1 = new Wordle(inputWord);
         for(int i = 0; i < 5; i++){
             System.out.println("Enter your guess: ");
             input = scan.nextLine();
