@@ -34,9 +34,7 @@ public class Tester{
     public static void main(String args[]){
         String input = "";
         Scanner scan = new Scanner(System.in);
-        String inputWord = readFile();
-        Wordle w1 = new Wordle(inputWord);
-        System.out.print(inputWord);
+        Wordle w1 = new Wordle("fives");
         for(int i = 0; i < 5; i++){
             System.out.println("Enter your guess: ");
             input = scan.nextLine();
