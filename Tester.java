@@ -37,9 +37,13 @@ public class Tester{
         //System.out.print(inputWord);
         Scanner scan = new Scanner(System.in);
         Wordle w1 = new Wordle(inputWord);
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 6; i++){
+            do{
             System.out.println("Enter your guess: ");
             input = scan.nextLine();
+            }
+            while(input.length() != 5);
+            input = input.toLowerCase();
             w1.checkWord(input, i);
             if(w1.getCheckString()){
                 break;

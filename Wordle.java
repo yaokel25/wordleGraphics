@@ -6,16 +6,16 @@ public class Wordle extends Pad{
     private String key1;
     private boolean checkString = false;
     public Wordle(String key){
-        super("Wordle", 1000, 1000);
+        super("Wordle", 1000, 1200);
         key1 = key;
     }
     
     public void drawVictory(){
-        Rectangle backgroundV = new Rectangle(0,0,1000,1000);
+        Rectangle backgroundV = new Rectangle(0,0,1000,1200);
         backgroundV.setFillColor(165,227,161);
     }
     public void drawDefeat(){
-        Rectangle background1 = new Rectangle(0,0,1000,1000);
+        Rectangle background1 = new Rectangle(0,0,1000,1200);
         background1.setFillColor(255,0,0);
         Text defeatText = new Text("YOU DIDN'T GUESS IT", 200, 420, 55);
         Text victoryText1 = new Text("WORD: " + key1, 350, 520, 55);
