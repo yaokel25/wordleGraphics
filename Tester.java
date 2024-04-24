@@ -37,6 +37,12 @@ public class Tester{
         String inputWord = readFile();
         System.out.print(inputWord);
         Scanner scan = new Scanner(System.in);
+        Pad inScreen = new Pad("Instructions", 1000, 1000);
+        Text instructions = new Text("Welcome to Wordle!", 400, 400, 35);
+        Text instructions1 = new Text("You have 6 tries to guess a five letter word. Enter your guesses into the terminal.", 90, 460, 25);
+        Text instructions2 = new Text("Letter combinations that are not words or are not 5 letters long are not valid inputs.", 70, 520, 25);
+        Text instructions3 = new Text("If you did not input a valid word, you will be reprompted to enter your guess.", 80, 580, 25);
+        Text instructions4 = new Text("Press enter to continue", 400, 640, 25);
         Wordle w1 = new Wordle(inputWord);
         for(int i = 0; i < 6; i++){
             do{
@@ -70,6 +76,4 @@ public class Tester{
         }
         
     }
-
-
 }
