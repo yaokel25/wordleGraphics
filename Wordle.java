@@ -17,15 +17,15 @@ public class Wordle extends Pad{
     public void drawDefeat(){
         Rectangle background1 = new Rectangle(0,0,1000,1200);
         background1.setFillColor(255,0,0);
-        Text defeatText = new Text("YOU DIDN'T GUESS IT", 200, 420, 55);
-        Text victoryText1 = new Text("WORD: " + key1, 350, 520, 55);
+        Text defeatText = new Text("YOU DIDN'T GUESS IT", 180, 500, 55);
+        Text victoryText1 = new Text("WORD: \"" + key1 + "\"", 320, 600, 55);
     }
     public void checkWord(String input, int numTry){
         boolean checkLetter = false;
         if(input.equals(key1)){
             drawVictory();
-            Text victoryText = new Text("YOU GUESSED IT!", 240, 420, 55);
-            Text victoryText1 = new Text(key1, 440, 520, 55);
+            Text victoryText = new Text("YOU GUESSED IT!", 245, 500, 55);
+            Text victoryText1 = new Text("Word: \"" + key1 + "\"", 320, 600, 55);
             System.out.println("You guessed it!");
             checkString = true;
         }
