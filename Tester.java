@@ -36,12 +36,12 @@ public class Tester{
         //String input = "";
         String inputWord = readFile();
         System.out.print(inputWord);
-        Scanner scan = new Scanner(System.in);
+        //Scanner scan = new Scanner(System.in);
         Pad inScreen = new Pad("Instructions", 1000, 1000);
-        Text instructions = new Text("Welcome to Wordle!", 400, 400, 35);
-        Text instructions1 = new Text("You have 6 tries to guess a five letter word. Enter your guesses into the terminal.", 90, 460, 25);
-        Text instructions2 = new Text("Letter combinations that are not words or are not 5 letters long are not valid inputs.", 70, 520, 25);
-        Text instructions3 = new Text("If you did not input a valid word, you will be reprompted to enter your guess.", 80, 580, 25);
+        Text instructions = new Text("Welcome to Wordle!", 335, 260, 35);
+        Text instructions1 = new Text("You have 6 tries to guess a five letter word. Enter your guesses into the terminal.", 55, 400, 25);
+        Text instructions2 = new Text("Letter combinations that are not words or are not 5 letters long are not valid inputs.", 45, 460, 25);
+        Text instructions3 = new Text("If you did not input a valid word, you will be reprompted to enter your guess.", 80, 520, 25);
         PushButton instructionButton = new PushButton(inputWord);
         //Text instructions4 = new Text("Press enter to continue", 400, 640, 25);
         //Wordle w1 = new Wordle(inputWord);
@@ -86,26 +86,27 @@ class PushButton {
 
     public PushButton(String inputWord) {
         // Create button shape and initialize
-        shpButton = new RoundRect(350, 610, 75, 50, 20, 20);
+        shpButton = new RoundRect(345, 610, 300, 50, 20, 20);
         shpButton.setFillColor(200);
-        Text instructions4 = new Text("Press here to continue", 400, 640, 25);
-
+        Text instructions4 = new Text("Press here to continue", 370, 625, 25);
+        input = inputWord;
         // Starts off
         isOn = false;
 
         // Set button click event handler method
-        shpButton.setMousePressedHandler( this::onPressed );
+        //shpButton.setMousePressedHandler( this::onPressed );
         instructions4.setMousePressedHandler( this::onPressed );
     }
 
     private void onPressed(Shape shp, double x, double y, int button) {
         // Toggle button state
+        Scanner scan = new Scanner(System.in);
         isOn = !isOn;
         Tester t1 = new Tester();
 
         // Set button fill color based on state
         if (isOn) {
-            Wordle w1 = new Wordle(inputWord);
+            Wordle w1 = new Wordle(input);
             for(int i = 0; i < 6; i++){
             do{
             System.out.println("Enter your guess: ");
@@ -139,8 +140,11 @@ class PushButton {
     }
             //shpButton.setFillColor(0, 255, 0);
          else {
-            shpButton.setFillColor(200);
+            //shpButton.setFillColor(200);
         }
     }
+
+            
+    
 }
 
