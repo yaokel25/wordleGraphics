@@ -34,7 +34,7 @@ public class Tester{
         boolean isWord = false;
         String inputWord = readFile();
         String input = "";
-        //System.out.print(inputWord); check code
+        System.out.print(inputWord); //check code
         Wordle w1 = new Wordle(inputWord);
         w1.drawInstructions();//display instructions
             for(int i = 0; i < 6; i++){

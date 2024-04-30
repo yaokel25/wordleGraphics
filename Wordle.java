@@ -19,7 +19,7 @@ public class Wordle extends Pad{
         super("Wordle", 1000, 1200);//this pad size only works on pcs it is too big for my macbook air computer screen
         key1 = key;
     }
-    public void drawInstructions(){//draw instructions
+    public void drawInstructions(){//draw instructions, has button that hides instructions when clicked
         instructions = new Text("Welcome to Wordle!", 335, 260, 35);
         instructions1 = new Text("You have 6 tries to guess a five letter word. Enter your guesses into the terminal.", 55, 400, 25);
         instructions2 = new Text("Letter combinations that are not words or are not 5 letters long are not valid inputs.", 45, 460, 25);
@@ -51,15 +51,15 @@ public class Wordle extends Pad{
         Text defeatText = new Text("YOU DIDN'T GUESS IT", 180, 500, 55);
         Text victoryText1 = new Text("WORD: \"" + key1 + "\"", 320, 600, 55);
     }
-    public void printRed(String input, int i, int numTry, boolean checkLetter){//prints letter and a red square if user guesses a letter that is not in the word, used in checkWord method
+    /*public void printRed(String input, int i, int numTry, boolean checkLetter){//prints letter and a red square if user guesses a letter that is not in the word, used in checkWord method
         System.out.println("Red ");
         Rectangle box = new Rectangle(i*200, numTry*200, 200, 200);
         box.setFillColor(255,0,0);
         Text letter1 = new Text(String.valueOf(input.charAt(i)), i*200 + 75, numTry*200 + 75, 100);
         System.out.println("Printed red letter");
 
-    }
-    public void printYellow(String input, int i, int numTry, boolean checkLetter){//prints a yellow box and the letter if user guesses the right letter but in the wrong position, used in checkWord method
+    }*/
+    /*public void printYellow(String input, int i, int numTry, boolean checkLetter){//prints a yellow box and the letter if user guesses the right letter but in the wrong position, used in checkWord method
         System.out.println("Yellow ");
         Rectangle box = new Rectangle(i*200, numTry*200, 200, 200);
         box.setFillColor(255,190,0);
@@ -67,15 +67,16 @@ public class Wordle extends Pad{
         System.out.println("Printed yellow letter");
         checkLetter = false;
 
-    }
-    public void printGreen(String input, int i, int numTry, boolean checkLetter){//prints green box and the letter if user guesses right letter in the right position, used in checkWord method
+    }*/
+    /*public void printGreen(String input, int i, int numTry, boolean checkLetter){//prints green box and the letter if user guesses right letter in the right position, used in checkWord method
         System.out.println("Green ");
         Rectangle box = new Rectangle(i*200, numTry*200, 200, 200);
         box.setFillColor(0,255,0);
         Text letter1 = new Text(String.valueOf(input.charAt(i)), i*200 + 75, numTry*200 + 75, 100);
         System.out.println("Printed green letter");
 
-    }
+    }*/
+    //previous 3 methods did not work as well as seperate methods, works better in the checkWord method 
     public void checkWord(String input, int numTry){//takes the user's guesses as input and checks every letter and prints out letter and a colored box if it is right, wrong position, or wrong
         boolean checkLetter = false;
         if(input.equals(key1)){//if input equals the word
@@ -89,8 +90,12 @@ public class Wordle extends Pad{
         else{
             //System.out.println("Else 1");-check code
             for(int i = 0; i < numLetters; i++){//iterates through all letter in word
-                if(input.charAt(i) == key1.charAt(i)){//if it is the right letter in the right position
-                   printGreen(input, i, numTry, checkLetter); //print green box and letter
+                if(input.charAt(i) == key1.charAt(i)){//if it is the right letter in the right position-print green box and letter
+                   System.out.println("Green ");
+                    Rectangle box = new Rectangle(i*200, numTry*200, 200, 200);
+                    box.setFillColor(0,255,0);
+                    Text letter1 = new Text(String.valueOf(input.charAt(i)), i*200 + 75, numTry*200 + 75, 100);
+                    //System.out.println("Printed green letter");
                 }
                 else{
                     for(int y = 0; y < numLetters; y++){//if it is the right letter but wrong box, then checkLetter is true
@@ -98,11 +103,20 @@ public class Wordle extends Pad{
                             checkLetter = true;
                         }
                     }
-                    if(checkLetter){
-                        printYellow(input, i, numTry, checkLetter);//prints yellow box and letter
+                    if(checkLetter){//prints a yellow box and the letter if user guesses the right letter but in the wrong position
+                                System.out.println("Yellow ");
+                                Rectangle box = new Rectangle(i*200, numTry*200, 200, 200);
+                                box.setFillColor(255,190,0);
+                                Text letter1 = new Text(String.valueOf(input.charAt(i)), i*200 + 75, numTry*200 + 75, 100);
+                                //System.out.println("Printed yellow letter");
+                                checkLetter = false;
                     }
                     else{
-                        printRed(input, i, numTry, checkLetter);//otherwise, print red box and letter
+                        System.out.println("Red ");//prints letter and a red square if user guesses a letter that is not in the word
+                        Rectangle box = new Rectangle(i*200, numTry*200, 200, 200);
+                        box.setFillColor(255,0,0);
+                        Text letter1 = new Text(String.valueOf(input.charAt(i)), i*200 + 75, numTry*200 + 75, 100);
+                        //System.out.println("Printed red letter");
                     }
                 }
             }
